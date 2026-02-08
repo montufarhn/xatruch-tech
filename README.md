@@ -1,2 +1,0 @@
-# Xatruch
-Site under construction
