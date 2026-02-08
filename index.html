@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xatruch Dispatch</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Colores extraídos del Logo */
+            --brand-dark: #051532;   /* Fondo Azul Oscuro */
+            --brand-cyan: #009DE0;   /* Azul Claro de 'DISPATCH' */
+            --brand-grey: #C4C6C8;   /* Gris del icono */
+            --brand-white: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--brand-dark);
+            color: var(--brand-white);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(5, 21, 50, 0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .navbar-brand img {
+            height: 50px; /* Ajustar según necesidad */
+        }
+        .nav-link {
+            color: var(--brand-white) !important;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            color: var(--brand-cyan) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(5, 21, 50, 0.8), rgba(5, 21, 50, 0.9)), url('images/bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-title {
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        .text-highlight {
+            color: var(--brand-cyan);
+        }
+
+        /* Botones */
+        .btn-primary {
+            background-color: var(--brand-cyan);
+            border-color: var(--brand-cyan);
+            color: var(--brand-white);
+            font-weight: 700;
+            padding: 12px 30px;
+            text-transform: uppercase;
+        }
+        .btn-primary:hover {
+            background-color: #007bb3;
+            border-color: #007bb3;
+        }
+
+        /* Tarjetas de Servicios */
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--brand-cyan);
+        }
+        .icon-box {
+            font-size: 2.5rem;
+            color: var(--brand-cyan);
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #020a1a;
+            padding: 40px 0;
+            border-top: 3px solid var(--brand-cyan);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <!-- Asumiendo que el logo está en la carpeta images relativa a este archivo -->
+                <img src="images/logo.png" alt="Xatruch Dispatch Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#inicio" data-i18n="nav_home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicios" data-i18n="nav_services">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros" data-i18n="nav_about">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary ms-lg-3" href="#contacto" data-i18n="nav_contact">Contáctanos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-3 hero-title mb-4" data-i18n="hero_title">Mantén tu <span class="text-highlight">vehiculo</span> siempre cargado</h1>
+            <p class="lead mb-5 text-light" data-i18n="hero_desc">Especialistas en despacho para Flatbeds y Hotshots. Negociamos las mejores tarifas del mercado para maximizar tus ganancias.</p>
+            <a href="#contacto" class="btn btn-primary btn-lg" data-i18n="hero_btn">Empezar a Cargar</a>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold" data-i18n="why_title">¿Por qué elegir <span class="text-highlight">XATRUCH</span>?</h2>
+                <p class="text-muted" data-i18n="why_subtitle">Años de experiencia moviendo cargas en la industria.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <div class="icon-box">🚛</div>
+                        <h3 data-i18n="serv1_title">Especialistas en Flatbed</h3>
+                        <p data-i18n="serv1_desc">Conocemos tu equipo. Nos enfocamos en buscar cargas específicas para vehículos como la Ford 350 y remolques de plataforma.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <div class="icon-box">💰</div>
+                        <h3 data-i18n="serv2_title">Mejores Tarifas</h3>
+                        <p data-i18n="serv2_desc">No solo buscamos cargas, negociamos agresivamente. Tu ganancia es nuestra prioridad; si tú ganas, nosotros ganamos.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <div class="icon-box">🤝</div>
+                        <h3 data-i18n="serv3_title">Soporte Dedicado</h3>
+                        <p data-i18n="serv3_desc">Nos encargamos del papeleo, las llamadas y la negociación con los brokers para que tú solo te preocupes por conducir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">&copy; <span id="year"></span> <span data-i18n="footer_rights">Xatruch Dispatch. Todos los derechos reservados.</span></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Diccionario de Traducciones
+        const translations = {
+            es: {
+                nav_home: "Inicio",
+                nav_services: "Servicios",
+                nav_about: "Nosotros",
+                nav_contact: "Contáctanos",
+                hero_title: 'Mantén tu <span class="text-highlight">vehiculo</span> siempre cargado',
+                hero_desc: "Especialistas en despacho para Flatbeds y Hotshots. Negociamos las mejores tarifas del mercado para maximizar tus ganancias.",
+                hero_btn: "Empezar a Cargar",
+                why_title: '¿Por qué elegir <span class="text-highlight">XATRUCH</span>?',
+                why_subtitle: "Años de experiencia moviendo cargas en la industria.",
+                serv1_title: "Especialistas en Flatbed",
+                serv1_desc: "Conocemos tu equipo. Nos enfocamos en buscar cargas específicas para vehículos como la Ford 350 y remolques de plataforma.",
+                serv2_title: "Mejores Tarifas",
+                serv2_desc: "No solo buscamos cargas, negociamos agresivamente. Tu ganancia es nuestra prioridad; si tú ganas, nosotros ganamos.",
+                serv3_title: "Soporte Dedicado",
+                serv3_desc: "Nos encargamos del papeleo, las llamadas y la negociación con los brokers para que tú solo te preocupes por conducir.",
+                footer_rights: "Xatruch Dispatch. Todos los derechos reservados."
+            },
+            en: {
+                nav_home: "Home",
+                nav_services: "Services",
+                nav_about: "About Us",
+                nav_contact: "Contact Us",
+                hero_title: 'Keep your <span class="text-highlight">vehicle</span> always loaded',
+                hero_desc: "Specialists in dispatch for Flatbeds and Hotshots. We negotiate the best market rates to maximize your profits.",
+                hero_btn: "Start Loading",
+                why_title: 'Why choose <span class="text-highlight">XATRUCH</span>?',
+                why_subtitle: "Years of experience moving loads in the industry.",
+                serv1_title: "Flatbed Specialists",
+                serv1_desc: "We know your equipment. We focus on finding specific loads for vehicles like the Ford 350 and flatbed trailers.",
+                serv2_title: "Best Rates",
+                serv2_desc: "We don't just find loads, we negotiate aggressively. Your profit is our priority; if you win, we win.",
+                serv3_title: "Dedicated Support",
+                serv3_desc: "We handle the paperwork, calls, and negotiation with brokers so you only worry about driving.",
+                footer_rights: "Xatruch Dispatch. All rights reserved."
+            }
+        };
+
+        // Detectar idioma del navegador (ej: 'en-US' o 'es-MX')
+        const userLang = navigator.language || navigator.userLanguage; 
+        const langCode = userLang.startsWith('en') ? 'en' : 'es';
+
+        // Aplicar traducción si el idioma detectado es Inglés (por defecto el HTML ya está en Español)
+        if (langCode === 'en') {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[langCode][key]) {
+                    element.innerHTML = translations[langCode][key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>
